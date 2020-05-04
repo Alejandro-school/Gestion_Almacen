@@ -13,7 +13,8 @@ class CreateProductsProvidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('products_providers', function (Blueprint $table) {
+        Schema::create('product_provider', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('id_product')->unsigned();
             $table->integer('id_provider')->unsigned();
             $table->float('price',5,2);

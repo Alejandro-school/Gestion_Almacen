@@ -13,7 +13,7 @@ class CreateConstraints extends Migration
      */
     public function up()
     {
-        Schema::table('products_providers', function (Blueprint $table) {
+        Schema::table('product_provider', function (Blueprint $table) {
             $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('id_provider')->references('id')->on('providers')->onDelete('cascade');
             
