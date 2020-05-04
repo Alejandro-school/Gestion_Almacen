@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('id_prodfab');
             $table->integer('internal_number');
             $table->string('image',255);
+            $table->integer('id_user')->unsigned();
         });
     }
 
