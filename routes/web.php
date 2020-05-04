@@ -15,7 +15,7 @@
 Route::get('/', function () {
 
     
-    $product = App\Product::find(2);
+    $product = App\Product::all();
 
     /*foreach($product->providers as $provider) {
         var_dump($provider->name);
@@ -26,7 +26,23 @@ Route::get('/', function () {
        var_dump($prod);
     }*/
 
-    return $product->providers;
+    foreach($product as $prod) {
+        var_dump($prod->name);
+        
+        for($i=0; $i<sizeof($prod->providers);$i++) {
+            echo $prod->providers[$i]->name."<br/>";
+        }
+    }
+
+    /*var_dump($product->image);
+
+    for($i=0; $i<sizeof($product->providers); $i++) {
+        echo $product->providers[$i]->name."<br/>";
+    }*/
+    
+
+   
+
 
     /*foreach($product as $prod) {
         var_dump($prod->id_prodfab);
