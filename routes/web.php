@@ -26,10 +26,14 @@ Route::get('/', function () {
        var_dump($prod);
     }*/
 
+    /*foreach($product as $products) {
+        echo $products."<br/><br/>";
+    }*/
+
     foreach($product as $prod) {
         var_dump($prod->name);
         
-        for($i=0; $i<sizeof($prod->providers);$i++) {
+       for($i=0; $i<sizeof($prod->providers);$i++) {
             echo $prod->providers[$i]->name."<br/>";
         }
     }
