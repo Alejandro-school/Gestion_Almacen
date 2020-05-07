@@ -41,6 +41,7 @@ class HomeController extends Controller
             $product = Product::where('id_prodfab', $productNumber)->first();
         }
 
-        return $product;
+        var_dump($product->name);
+        echo($product->providers[0]->name);
     }
 }
