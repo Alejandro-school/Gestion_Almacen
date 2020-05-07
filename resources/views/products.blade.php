@@ -3,7 +3,7 @@
         @if(isset($products))
         <div class="card-body">
             <table class="table table-hover text-center">
-                <thead>
+                <thead class="bg-warning">
                     <tr>
                         <th scope="col">Id_producto</th>
                         <th scope="col">Nombre Producto</th>
@@ -33,7 +33,7 @@
                         <th scope="col">Proveedores</th>
                         <th scope="col">Precio</th>
                     </tr>
-                </thead>
+                </thead >
                 <tbody>
                     @for($i=0; $i< sizeof($products->providers);$i++)
 
