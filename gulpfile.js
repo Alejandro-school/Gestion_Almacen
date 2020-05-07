@@ -3,6 +3,6 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass([
-        'prueba.scss',
+        'layout.scss',
     ],  'public/css/style.min.css');
 });

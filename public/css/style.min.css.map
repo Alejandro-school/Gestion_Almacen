@@ -1,1 +1,1 @@
-{"version":3,"sources":["prueba.scss"],"names":[],"mappings":"AAKA;EACI,YALQ;CAMX;;AAED;EACI,mBAAiB;EACjB,gBAAc;EACd,aAAW;CACd","file":"style.min.css","sourcesContent":["\r\n$blue : blue;\r\n\r\n\r\n\r\nheader {\r\n    color:$blue;\r\n}\r\n\r\nbody {\r\n    text-align:center;\r\n    font-size:16px;\r\n    color:black;\r\n}"]}
+{"version":3,"sources":["layout.scss"],"names":[],"mappings":"AACA;EACI,aAAW;EACX,aAAW;CACZ","file":"style.min.css","sourcesContent":["\r\n.img-logo {\r\n    width:200px;\r\n    height:50px;\r\n  }\r\n  "]}
