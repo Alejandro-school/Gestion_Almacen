@@ -11,7 +11,7 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <td>{{$products->id_prodfab}}</td>
                         <td>{{$products->name}}</td>

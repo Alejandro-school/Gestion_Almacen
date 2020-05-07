@@ -43,7 +43,6 @@ class HomeController extends Controller
             $product = Product::where('id_prodfab', $productNumber)->first();
         }
 
-
         return view('home', ['products'=>$product]);
     }
 }

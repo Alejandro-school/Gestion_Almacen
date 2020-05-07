@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name',155);
-            $table->string('id_prodfab',255);
-            $table->string('internal_number',255);
+            $table->string('id_prodfab',255)->unique();
+            $table->string('internal_number',255)->unique();
             $table->string('image',255);
             $table->integer('id_user')->unsigned();
         });
