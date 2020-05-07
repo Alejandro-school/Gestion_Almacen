@@ -43,20 +43,20 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
+                                <td>prueba1</td>
+                                <td>prueba2</td>
                                
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
+                                <td>prueba3</td>
+                                <td>prueba4</td>
                            
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>Larry the Bird</td>
-                                <td>Peter</td>
+                                <td>prueba5</td>
+                                <td>prueba6</td>
                             
                             </tr>
                         </tbody>
