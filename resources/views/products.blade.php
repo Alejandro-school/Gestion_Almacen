@@ -3,7 +3,7 @@
         @if(isset($products))
         <div class="card-body">
             <table class="table table-hover text-center">
-                <thead class="bg-warning">
+                <thead class="bg-orange">
                     <tr>
                         <th scope="col">Id_producto</th>
                         <th scope="col">Nombre Producto</th>
