@@ -5,13 +5,12 @@
             <table class="table table-hover text-center">
                 <thead class="bg-orange">
                     <tr>
-                        <th scope="col">Id_producto</th>
+                        <th scope="col">Codigo Producto</th>
                         <th scope="col">Nombre Producto</th>
-                        <th scope="col">Numero Interno</th>
+                        <th scope="col">Codigo Interno</th>
                     </tr>
                 </thead>
                 <tbody>
-
                     <tr>
                         <td>{{$products->id_prodfab}}</td>
                         <td>{{$products->name}}</td>
@@ -40,16 +39,12 @@
                         <tr>
                             <td>{{$products->providers[$i]->nif}}</td>
                             <td>{{$products->providers[$i]->name}}</td>
-                            <td>{{$products->providers[$i]['pivot']->price}}</td>
-
+                            <td>{{$products->providers[$i]['pivot']->price}}€</td>
                         </tr>
-                        @endfor
-
-
+                    @endfor
                 </tbody>
             </table>
         </div>
-
     </div>
     @endif
 
