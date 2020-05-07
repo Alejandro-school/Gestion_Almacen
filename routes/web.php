@@ -60,3 +60,4 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('search', 'HomeController@search');
