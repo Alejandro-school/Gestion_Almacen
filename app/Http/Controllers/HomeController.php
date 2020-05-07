@@ -30,6 +30,8 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
+
+
         $intNumber = $request->input('internal_number');
         $productNumber = $request->input('id_prodfab');
         
@@ -41,7 +43,7 @@ class HomeController extends Controller
             $product = Product::where('id_prodfab', $productNumber)->first();
         }
 
-        var_dump($product->name);
-        echo($product->providers[0]->name);
+
+        return view('home', ['products' => $product]);
     }
 }
