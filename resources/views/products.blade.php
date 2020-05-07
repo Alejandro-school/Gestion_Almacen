@@ -21,7 +21,6 @@
 
     </div>
 
-    {{$products->providers}}
     <div class="card mt-4">
 
         <div class="card-body">
@@ -33,14 +32,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                @for($i=0; $i< sizeof($products->providers);$i++)
-                    <tr>
-                       
+                    @for($i=0; $i< sizeof($products->providers);$i++)
+
+                        <tr>
                             <td>{{$products->providers[$i]->name}}</td>
-                            
-                            
-                    </tr>
-                @endfor
+                            <td>{{$products->providers[$i]['pivot']->price}}</td>
+
+                        </tr>
+                        @endfor
+
+
                 </tbody>
             </table>
         </div>

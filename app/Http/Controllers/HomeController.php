@@ -44,6 +44,6 @@ class HomeController extends Controller
         }
 
 
-        return view('home', ['products' => $product]);
+        return view('home', ['products'=>$product]);
     }
 }
