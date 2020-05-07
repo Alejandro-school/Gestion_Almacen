@@ -12,23 +12,23 @@
 */
 
 
-Route::get('/', function () {
+/*Route::get('/', function () {
 
     
     $product = App\Product::all();
 
-    /*foreach($product->providers as $provider) {
+    foreach($product->providers as $provider) {
         var_dump($provider->name);
         var_dump($product->id_prodfab);
-    }*/
+    }
 
-    /*foreach($product as $prod) {
+    foreach($product as $prod) {
        var_dump($prod);
-    }*/
+    }
 
-    /*foreach($product as $products) {
+  foreach($product as $products) {
         echo $products."<br/><br/>";
-    }*/
+    }
 
     foreach($product as $prod) {
         var_dump($prod->name);
@@ -38,24 +38,25 @@ Route::get('/', function () {
         }
     }
 
-    /*var_dump($product->image);
+    var_dump($product->image);
 
     for($i=0; $i<sizeof($product->providers); $i++) {
         echo $product->providers[$i]->name."<br/>";
-    }*/
+    }
     
 
    
 
 
-    /*foreach($product as $prod) {
+    foreach($product as $prod) {
         var_dump($prod->id_prodfab);
         echo $prod->providers[0]->id;
         
-    }*/
+    }
 
 });
+*/
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
