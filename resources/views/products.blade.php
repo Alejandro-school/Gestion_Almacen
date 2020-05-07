@@ -7,6 +7,7 @@
                     <tr>
                         <th scope="col">Id_producto</th>
                         <th scope="col">Nombre Producto</th>
+                        <th scope="col">Numero Interno</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -14,6 +15,7 @@
                     <tr>
                         <td>{{$products->id_prodfab}}</td>
                         <td>{{$products->name}}</td>
+                        <td>{{$products->internal_number}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -27,6 +29,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th scope="col">Numero Proveedor</th>
                         <th scope="col">Proveedores</th>
                         <th scope="col">Precio</th>
                     </tr>
@@ -35,6 +38,7 @@
                     @for($i=0; $i< sizeof($products->providers);$i++)
 
                         <tr>
+                            <td>{{$products->providers[$i]->nif}}</td>
                             <td>{{$products->providers[$i]->name}}</td>
                             <td>{{$products->providers[$i]['pivot']->price}}</td>
 
