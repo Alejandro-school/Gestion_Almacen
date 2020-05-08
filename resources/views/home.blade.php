@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        @include('products')
+        @include('product.products')
 
     </div>
 </div>

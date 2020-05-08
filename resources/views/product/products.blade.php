@@ -8,14 +8,20 @@
                         <th scope="col">Codigo Producto</th>
                         <th scope="col">Nombre Producto</th>
                         <th scope="col">Codigo Interno</th>
+                        <th scope="col">Editar</th>
+                        
+
                     </tr>
                 </thead>
                 <tbody>
                     
                     <tr>
+                        
                         <td>{{$products->id_prodfab}}</td>
                         <td>{{$products->name}}</td>
                         <td>{{$products->internal_number}}</td>
+                        <td><a href="{{ route('detail.product',$products->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a></td>
+                        
                     </tr>
                 </tbody>
             </table>
@@ -35,6 +41,7 @@
                     </tr>
                 </thead >
                 <tbody>
+                   
                     @for($i=0; $i< sizeof($products->providers);$i++)
 
                         <tr>
