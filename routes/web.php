@@ -61,4 +61,9 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::post('search', 'HomeController@search');
+
+//Providers
 Route::resource('Providers', 'ProviderController');
+
+//product
+Route::get('detailProduct/{id}', 'ProductController@modify')->name('modify.product');
