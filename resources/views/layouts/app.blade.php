@@ -54,7 +54,7 @@
                         @else
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gestionar Proveedores</span></a>
+                            <a class="nav-link" href="{{ url('/Providers') }}">Gestionar Proveedores</span></a>
                         </li>
 
                         <li class="nav-item">
