@@ -29,7 +29,11 @@
                             <td>{{$provider->name}}</td>
                             <td>{{$provider->nif}}</td>
                             <td>{{$provider->logo}}</td>
-                            <td>Editar | Borrar</td>
+                            <td>Editar |
+
+                    
+
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

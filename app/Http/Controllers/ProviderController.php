@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\provider;
+use App\Provider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,8 +16,8 @@ class ProviderController extends Controller
     public function index()
     {
 
-        $datos['providers']=provider::paginate(5);
-        return view ('providers.index', $datos);   
+        $datos['providers']=Provider::paginate(5);
+        return view ('Providers.index', $datos);   
     
     }
 
@@ -28,7 +28,7 @@ class ProviderController extends Controller
      */
     public function create()
     {
-        return view ('providers.create');
+        return view ('Providers.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class ProviderController extends Controller
         );
        
 
-       provider::insert($data);
+       Provider::insert($data);
 
        return back();
     }
@@ -64,10 +64,10 @@ class ProviderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\provider  $provider
+     * @param  \App\Provider  $Provider
      * @return \Illuminate\Http\Response
      */
-    public function show(provider $provider)
+    public function show(Provider $provider)
     {
         //
     }
@@ -75,10 +75,10 @@ class ProviderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\provider  $provider
+     * @param  \App\Provider  $Provider
      * @return \Illuminate\Http\Response
      */
-    public function edit(provider $provider)
+    public function edit(Provider $provider)
     {
         //
     }
@@ -87,10 +87,10 @@ class ProviderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\provider  $provider
+     * @param  \App\Provider  $Provider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, provider $provider)
+    public function update(Request $request, Provider $provider)
     {
         //
     }
@@ -98,10 +98,10 @@ class ProviderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\provider  $provider
+     * @param  \App\Provider  $Provider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(provider $provider)
+    public function destroy(Provider $provider)
     {
         //
     }

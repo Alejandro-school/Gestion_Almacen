@@ -11,30 +11,36 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="{{ url('/Providers') }}" method="post" enctype="mulitpart/form-data">
+                    <form action="{{ url('/Providers') }}" method="post" id="success-contact-form-2" enctype="mulitpart/form-data">
 
                     {{ csrf_field() }}
+                        
+                        <div class="form-group">
+                            <label for="name">{{'Nombre'}}</label>
+                            <input  class="form-control" type="text" name="name" value="">
+                        </div>
 
-                        <label for="name">{{'Nombre'}}</label>
-                        <input type="text" name="name" value="">
-                        </br>
-                        <label for="nif">{{'Nif'}}</label>
-                        <input type="text" name="nif" value="">
-                        </br>
-                        <label for="logo">{{'Logo'}}</label>
-                        <input type="file" name="logo" value="">
 
-                        </br>
+                        <div class="form-group">
 
-                        <input type="submit" value="Agregar">
+                            <label for="nif">{{'Nif'}}</label>
+                            <input  class="form-control" type="text" name="nif" value="">
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <label for="logo">{{'Logo'}}</label>
+                            <input class="form-control" type="file" name="logo" value="">
+                        </div>
+
+
+                        <input type="submit" class="btn bg-orange" value="Agregar">
 
                     </form>
 
                 </div>
             </div>
         </div>
-
-        @include('products')
 
     </div>
 </div>
