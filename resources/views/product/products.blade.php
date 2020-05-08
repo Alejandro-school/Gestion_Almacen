@@ -20,7 +20,7 @@
                         <td>{{$products->id_prodfab}}</td>
                         <td>{{$products->name}}</td>
                         <td>{{$products->internal_number}}</td>
-                        <td><a href="{{ route('detail.product',$products->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a></td>
+                        <td><a href="{{ route('modify.product',$products->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a></td>
                         
                     </tr>
                 </tbody>

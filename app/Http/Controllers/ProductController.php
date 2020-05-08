@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Product;
 class ProductController extends Controller
 {
     
-    public function detail()
+    public function modify($id)
     {
-        return view('product.detail');
+        $product = Product::where('id', $id)->first();
+        
+
+        return view('product.modify', ['product' => $product]);
     }
 }
