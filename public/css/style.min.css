@@ -7,6 +7,10 @@
   background: #FF9000;
 }
 
+.button-green {
+  background-color: #08bb08;
+}
+
 .text-orange {
   color: #FF9000 !important;
 }

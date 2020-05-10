@@ -60,6 +60,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Gestionar Productos</span></a>
                         </li>
+                        
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle text-orange" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

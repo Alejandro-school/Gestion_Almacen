@@ -43,6 +43,15 @@ class ProviderController extends Controller
        $name=$request->input("name");
        $nif=$request->input("nif");
        $logo=$request->input("logo");
+       
+        
+        if ($picture=$request->file('logo')) {
+            
+                $namePicture=$picture->getClientOriginalName();
+                $picture->move(public_path().'/images',$namePicture);
+
+                $logo = $namePicture;
+        }
 
 
       $data=array(
@@ -78,9 +87,11 @@ class ProviderController extends Controller
      * @param  \App\Provider  $Provider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Provider $provider)
+    public function edit($id)
     {
-        //
+        $provider = Provider::findOrFail($id);
+
+        return view('Providers.edit',compact('provider'));
     }
 
     /**
@@ -90,9 +101,29 @@ class ProviderController extends Controller
      * @param  \App\Provider  $Provider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Provider $provider)
+    public function update(Request $request, $id)
     {
-        //
+        
+       $name=$request->input("name");
+       $nif=$request->input("nif");
+       $logo=$request->input("logo");
+
+
+      $data=array(
+        
+        'name'=>$name,
+        'nif'=>$nif,
+        'logo'=>$logo,
+        'updated_at'=>Carbon::now()
+    
+        );
+       
+        //No se porque tiene que ser un '='. Si pongo 2 iguales no funciona
+       Provider::where('id','=',$id)->update($data);
+
+       $provider = Provider::findOrFail($id);
+
+       return view('Providers.edit',compact('provider'));
     }
 
     /**
@@ -101,8 +132,10 @@ class ProviderController extends Controller
      * @param  \App\Provider  $Provider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Provider $provider)
+    public function destroy($id)
     {
-        //
+        Provider::destroy($id);
+
+        return back();
     }
 }
