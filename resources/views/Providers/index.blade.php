@@ -7,11 +7,16 @@
         <div class="col-md-8 mb-4">
             <div class="card">
                 <div class="card-header">
-                    Index
+                    Gestión Proveedores
                 </div>
                 <div class="card-body">
                 
-                <table class="table table-hover text-center">
+                <a href="{{ url ('/Providers/create') }}" class="btn btn-success" >Añadir Proveedor</a>
+                
+                </br>
+                </br>
+
+                <table class="table table-hover table-light text-center">
                     <thead class="bg-orange">
                         <tr>
                             <th scope="col">#</th>
@@ -29,9 +34,17 @@
                             <td>{{$provider->name}}</td>
                             <td>{{$provider->nif}}</td>
                             <td>{{$provider->logo}}</td>
-                            <td>Editar |
+                            <td>
 
-                    
+                            <a href="{{ url ('/Providers/'.$provider->id).'/edit' }}" class="btn btn-warning" >Editar</a>
+
+                                <form method="post" action="{{ url ('/Providers/'.$provider->id) }}" style="display:inline">
+                                {{ csrf_field() }}
+                                {{method_field ('DELETE') }}
+
+                                <button class="btn btn-danger" type="submit">Borrar</button>
+                                
+                                </form>
 
                             </td>
                         </tr>
