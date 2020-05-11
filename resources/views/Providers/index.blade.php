@@ -16,6 +16,18 @@
                 </br>
                 </br>
 
+                @if (Session::has('success'))
+                    <p class="alert-success text-center">{{Session::get('success')}}</p>
+                @endif
+
+                @if (Session::has('edit'))
+                    <p class="alert-success text-center">{{Session::get('edit')}}</p>
+                @endif
+
+                @if (Session::has('delete'))
+                    <p class="alert-success text-center">{{Session::get('delete')}}</p>
+                @endif
+
                 <table class="table table-hover table-light text-center">
                     <thead class="bg-orange">
                         <tr>
@@ -33,7 +45,9 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$provider->name}}</td>
                             <td>{{$provider->nif}}</td>
-                            <td>{{$provider->logo}}</td>
+                            <td>
+                                <img class="size-img" src="{{ asset('/images').'/'.$provider->logo }}" alt="Logo empresa proveedor">
+                            </td>
                             <td>
 
                             <a href="{{ url ('/Providers/'.$provider->id).'/edit' }}" class="btn btn-warning" >Editar</a>

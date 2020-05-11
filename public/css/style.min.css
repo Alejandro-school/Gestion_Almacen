@@ -11,6 +11,10 @@
   background-color: #08bb08;
 }
 
+.size-img {
+  max-width: 40% ;
+}
+
 .text-orange {
   color: #FF9000 !important;
 }

@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="{{url('/Providers/' . $provider->id) }}" method="post" id="success-contact-form-2" enctype="mulitpart/form-data">
+                    <form action="{{url('/Providers/' . $provider->id) }}" method="post" id="success-contact-form-2" enctype="multipart/form-data">
 
                     {{ csrf_field() }}
 
@@ -34,7 +34,7 @@
                             <label for="logo">{{'Logo'}}</label>
 
                         </br>
-                            {{$provider->logo}}
+                            <img class="size-img" src="{{ asset('/images').'/'.$provider->logo }}" alt="Logo empresa proveedor">
                         </br>
 
                             <input class="form-control" type="file" name="logo" value="">

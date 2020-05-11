@@ -10,8 +10,8 @@
                    Create
                 </div>
                 <div class="card-body">
-
-                    <form action="{{ url('/Providers') }}" method="post" id="success-contact-form-2" enctype="mulitpart/form-data">
+                    
+                    <form action="{{ url('/Providers') }}" method="post" id="success-contact-form-2" enctype="multipart/form-data">
 
                     {{ csrf_field() }}
                         

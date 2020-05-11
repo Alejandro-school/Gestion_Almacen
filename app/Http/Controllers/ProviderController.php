@@ -40,18 +40,19 @@ class ProviderController extends Controller
     public function store(Request $request)
     {
 
-       $name=$request->input("name");
-       $nif=$request->input("nif");
-       $logo=$request->input("logo");
+       $name=request()->input('name');
+       $nif=request()->input('nif');
+       $logo=request()->input('logo');
        
-        
-        if ($picture=$request->file('logo')) {
-            
-                $namePicture=$picture->getClientOriginalName();
-                $picture->move(public_path().'/images',$namePicture);
 
-                $logo = $namePicture;
-        }
+       if ($picture= $request->file('logo')) {
+
+        $namePicture = $picture->getClientOriginalName();
+        $picture->move(public_path().'/images',$namePicture);
+
+        $logo= $namePicture;
+
+       }
 
 
       $data=array(
@@ -67,7 +68,8 @@ class ProviderController extends Controller
 
        Provider::insert($data);
 
-       return back();
+        return redirect('Providers')->with('success','Proveedor creado!');
+
     }
 
     /**
@@ -108,6 +110,14 @@ class ProviderController extends Controller
        $nif=$request->input("nif");
        $logo=$request->input("logo");
 
+       if ($picture= $request->file('logo')) {
+
+        $namePicture = $picture->getClientOriginalName();
+        $picture->move(public_path().'/images',$namePicture);
+
+        $logo= $namePicture;
+
+       }
 
       $data=array(
         
@@ -122,8 +132,8 @@ class ProviderController extends Controller
        Provider::where('id','=',$id)->update($data);
 
        $provider = Provider::findOrFail($id);
-
-       return view('Providers.edit',compact('provider'));
+       return redirect('Providers')->with('edit','Proveedor actualizado!');
+      
     }
 
     /**
@@ -136,6 +146,6 @@ class ProviderController extends Controller
     {
         Provider::destroy($id);
 
-        return back();
+        return redirect('Providers')->with('delete','Proveedor eliminado!');
     }
 }
