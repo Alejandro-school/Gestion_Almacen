@@ -31,4 +31,3 @@ function route(page) {
 }
 
 window.addEventListener('DOMContentLoaded', initPage_onDomContentLoaded);
-//# sourceMappingURL=script.min.js.map

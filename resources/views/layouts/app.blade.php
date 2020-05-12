@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-page="{{$dataPage}}">
 
 <head>
     <meta charset="utf-8">
@@ -59,7 +59,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gestionar Productos</span></a>
+                            <a class="nav-link" href="{{ url('/Products') }}">Gestionar Productos</span></a>
                         </li>
                         
                         <li class="nav-item dropdown">

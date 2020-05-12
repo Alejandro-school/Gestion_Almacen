@@ -11,8 +11,9 @@
   background-color: #08bb08;
 }
 
-.size-img {
-  max-width: 40% ;
+td > img {
+  max-width: 140px;
+  height: 50px;
 }
 
 .text-orange {
@@ -21,6 +22,10 @@
 
 h2 {
   text-align: center;
+}
+
+.alert-warning {
+  color: red;
 }
 
 /*# sourceMappingURL=style.min.css.map */

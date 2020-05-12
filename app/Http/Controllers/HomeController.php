@@ -25,13 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $dataPage = "setupHome";
+        return view('home',['dataPage' => $dataPage]);
     }
 
     public function search(Request $request)
     {
 
-
+        $dataPage = "";
         $intNumber = $request->input('internal_number');
         $productNumber = $request->input('id_prodfab');
         
@@ -43,6 +44,6 @@ class HomeController extends Controller
             $product = Product::where('id_prodfab', $productNumber)->first();
         }
 
-        return view('home', ['products'=>$product]);
+        return view('home', ['products'=>$product, 'dataPage' => $dataPage]);
     }
 }

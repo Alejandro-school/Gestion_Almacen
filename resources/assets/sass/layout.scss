@@ -15,9 +15,10 @@
   background-color: rgb(8, 187, 8);
 }
 
-img
+td > img
 {
-  max-width: 10%;
+  max-width: 140px;
+  height: 50px;
 }
 
 .text-orange {
@@ -27,4 +28,8 @@ img
 h2 {
   
   text-align:center;
+}
+
+.alert-warning{
+  color:red;
 }

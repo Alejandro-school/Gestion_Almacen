@@ -9,6 +9,6 @@ elixir(function(mix) {
 
 elixir(function(mix) {
     mix.scripts([
-        'script.js',
+        'general.js',
     ],  'public/js/script.min.js');
 });

@@ -16,8 +16,9 @@ class ProviderController extends Controller
     public function index()
     {
 
+        $dataPage = "";
         $datos['providers']=Provider::paginate(5);
-        return view ('Providers.index', $datos);   
+        return view ('Providers.index', $datos, ['dataPage' => $dataPage]);   
     
     }
 
@@ -28,7 +29,8 @@ class ProviderController extends Controller
      */
     public function create()
     {
-        return view ('Providers.create');
+        $dataPage = "";
+        return view ('Providers.create',['dataPage' => $dataPage]);
     }
 
     /**
@@ -39,6 +41,7 @@ class ProviderController extends Controller
      */
     public function store(Request $request)
     {
+
 
        $name=request()->input('name');
        $nif=request()->input('nif');
@@ -91,9 +94,10 @@ class ProviderController extends Controller
      */
     public function edit($id)
     {
+        $dataPage = "";
         $provider = Provider::findOrFail($id);
 
-        return view('Providers.edit',compact('provider'));
+        return view('Providers.edit',['provider' => $provider, 'dataPage' => $dataPage]);
     }
 
     /**
