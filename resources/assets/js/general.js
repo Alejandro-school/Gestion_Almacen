@@ -26,8 +26,6 @@ function addProvidersPrice() {
     var checks = document.querySelectorAll(".checkProv");
     var displayProv = document.querySelectorAll(".displayProv");
 
-    
- 
     for (var i = 0; i < checks.length; i++) {
         
         checks[i].addEventListener("click", function() {

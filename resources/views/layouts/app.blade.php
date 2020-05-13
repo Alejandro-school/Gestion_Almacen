@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
-@if($dataPage)
+@if(isset($dataPage))
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-page="{{$dataPage}}">
 @endif
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
