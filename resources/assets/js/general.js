@@ -24,27 +24,25 @@ function route(page) {
 
 function addProvidersPrice() {
     var checks = document.querySelectorAll(".checkProv");
-    var displayProv = document.querySelectorAll(".displayProv");
+    var displayProv = document.querySelector(".displayProv");
 
     for (var i = 0; i < checks.length; i++) {
         
-        checks[i].addEventListener("click", function() {
-            
-            for(var j =0; j<displayProv.length;j++) {
+        checks[i].addEventListener("click", function() {            
 
                 if (this.checked) {
                     
-                    displayProv[j].innerHTML = `
+                    displayProv.innerHTML = `
                     <div class="form-group">
                     <label for="logo">Precio</label>
                     <input class="form-control" type="text" name="price" value="">
                     <p class="alert-warning"></p>
                     </div>`;
                 } else {
-                    displayProv[j].innerHTML = "";
+                    displayProv.innerHTML = "";
                 } 
                
-            }    
+              
             
         });
     }

@@ -42,7 +42,7 @@ class ProductController extends Controller
             'name' => 'required|string',
             'id_prodfab' => 'required|string',
             'internal_number' => 'required|string',
-            'imagen' => 'required|max:2048|mimes:jpeg,jpg, png',
+            'imagen' => 'required|max:2048|mimes:jpeg,jpg,png',
             'price' => 'required',
           ]);
 
