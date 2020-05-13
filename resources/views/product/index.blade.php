@@ -45,10 +45,10 @@
                        
                             <a href="{{ route('modify.product',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a>
 
-                                <form method="post" action="" style="display:inline">
+                                <form method="post" action="{{ action('ProductController@delete') }}" style="display:inline">
                                 {{ csrf_field() }}
                                
-
+                                <input type="hidden" name="id_product" value="{{$prod->id}}">
                                 <button class="btn btn-danger" type="submit">Borrar</button>
                                 
                                 </form>

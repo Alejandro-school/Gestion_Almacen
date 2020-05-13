@@ -135,4 +135,11 @@ class ProductController extends Controller
               return redirect()->action('ProductController@index')->with('success', 'Producto Actualizado Satisfactoriamente');
 
     }
+
+    public function delete(Request $request) {
+
+        $id_product = $request->input('id_product');
+        Product::destroy($id_product);
+        return redirect()->action('ProductController@index')->with('success', 'Producto Borrado Satisfactoriamente');
+    }
 }

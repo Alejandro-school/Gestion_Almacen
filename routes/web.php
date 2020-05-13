@@ -70,4 +70,5 @@ Route::get('detailProduct/{id}', 'ProductController@modify')->name('modify.produ
 Route::get('Products', 'ProductController@index');
 Route::get('createProduct', 'ProductController@create');
 Route::post('updateProduct', 'ProductController@update');
+Route::post('deleteProduct', 'ProductController@delete');
 
