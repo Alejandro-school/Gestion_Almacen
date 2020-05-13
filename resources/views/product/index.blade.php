@@ -13,6 +13,7 @@
                 <div class="card-body">
                 
                 <a href="{{ url('/createProduct') }}" class="btn btn-success" >Añadir producto</a>
+                <a href="{{ url('/createProduct') }}" class="btn btn-info font-weight-bold" >Vincular Proveedor</a>
                 
                 </br>
                 </br>
@@ -42,7 +43,7 @@
                             <td><img src="{{ asset('/images').'/'.$prod->image}}" alt=""></td>
                             <td>
                        
-                            <a href="" class="btn btn-warning" >Editar</a>
+                            <a href="{{ route('modify.product',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a>
 
                                 <form method="post" action="" style="display:inline">
                                 {{ csrf_field() }}

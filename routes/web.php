@@ -69,4 +69,5 @@ Route::resource('Providers', 'ProviderController');
 Route::get('detailProduct/{id}', 'ProductController@modify')->name('modify.product');
 Route::get('Products', 'ProductController@index');
 Route::get('createProduct', 'ProductController@create');
-Route::post('saveProduct', 'ProductController@save');
+Route::post('updateProduct', 'ProductController@update');
+

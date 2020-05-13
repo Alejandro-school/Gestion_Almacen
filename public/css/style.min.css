@@ -24,6 +24,11 @@ h2 {
   text-align: center;
 }
 
+.size-img {
+  width: 250px;
+  height: 100px;
+}
+
 .alert-warning {
   color: red;
 }
