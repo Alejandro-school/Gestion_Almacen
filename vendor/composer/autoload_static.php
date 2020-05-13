@@ -153,6 +153,7 @@ class ComposerStaticInit3af25a7893ff0ebe942397c3013d7bf5
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
             'DeepCopy\\' => 9,
@@ -416,6 +417,10 @@ class ComposerStaticInit3af25a7893ff0ebe942397c3013d7bf5
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
+        ),
         'Doctrine\\Common\\Lexer\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
@@ -447,13 +452,6 @@ class ComposerStaticInit3af25a7893ff0ebe942397c3013d7bf5
     );
 
     public static $prefixesPsr0 = array (
-        'U' => 
-        array (
-            'UpdateHelper\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/kylekatarnls/update-helper/src',
-            ),
-        ),
         'P' => 
         array (
             'Parsedown' => 
@@ -542,6 +540,47 @@ class ComposerStaticInit3af25a7893ff0ebe942397c3013d7bf5
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
+        'Doctrine\\Inflector\\CachedWordInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/CachedWordInflector.php',
+        'Doctrine\\Inflector\\GenericLanguageInflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/GenericLanguageInflectorFactory.php',
+        'Doctrine\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Inflector.php',
+        'Doctrine\\Inflector\\InflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/InflectorFactory.php',
+        'Doctrine\\Inflector\\Language' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Language.php',
+        'Doctrine\\Inflector\\LanguageInflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/LanguageInflectorFactory.php',
+        'Doctrine\\Inflector\\NoopWordInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/NoopWordInflector.php',
+        'Doctrine\\Inflector\\Rules\\English\\Inflectible' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Inflectible.php',
+        'Doctrine\\Inflector\\Rules\\English\\InflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php',
+        'Doctrine\\Inflector\\Rules\\English\\Rules' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Rules.php',
+        'Doctrine\\Inflector\\Rules\\English\\Uninflected' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Uninflected.php',
+        'Doctrine\\Inflector\\Rules\\French\\Inflectible' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Inflectible.php',
+        'Doctrine\\Inflector\\Rules\\French\\InflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/InflectorFactory.php',
+        'Doctrine\\Inflector\\Rules\\French\\Rules' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Rules.php',
+        'Doctrine\\Inflector\\Rules\\French\\Uninflected' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Uninflected.php',
+        'Doctrine\\Inflector\\Rules\\NorwegianBokmal\\Inflectible' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Inflectible.php',
+        'Doctrine\\Inflector\\Rules\\NorwegianBokmal\\InflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/InflectorFactory.php',
+        'Doctrine\\Inflector\\Rules\\NorwegianBokmal\\Rules' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Rules.php',
+        'Doctrine\\Inflector\\Rules\\NorwegianBokmal\\Uninflected' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Uninflected.php',
+        'Doctrine\\Inflector\\Rules\\Pattern' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Pattern.php',
+        'Doctrine\\Inflector\\Rules\\Patterns' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Patterns.php',
+        'Doctrine\\Inflector\\Rules\\Portuguese\\Inflectible' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Inflectible.php',
+        'Doctrine\\Inflector\\Rules\\Portuguese\\InflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/InflectorFactory.php',
+        'Doctrine\\Inflector\\Rules\\Portuguese\\Rules' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Rules.php',
+        'Doctrine\\Inflector\\Rules\\Portuguese\\Uninflected' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Portuguese/Uninflected.php',
+        'Doctrine\\Inflector\\Rules\\Ruleset' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Ruleset.php',
+        'Doctrine\\Inflector\\Rules\\Spanish\\Inflectible' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Inflectible.php',
+        'Doctrine\\Inflector\\Rules\\Spanish\\InflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/InflectorFactory.php',
+        'Doctrine\\Inflector\\Rules\\Spanish\\Rules' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Rules.php',
+        'Doctrine\\Inflector\\Rules\\Spanish\\Uninflected' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Spanish/Uninflected.php',
+        'Doctrine\\Inflector\\Rules\\Substitution' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Substitution.php',
+        'Doctrine\\Inflector\\Rules\\Substitutions' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Substitutions.php',
+        'Doctrine\\Inflector\\Rules\\Transformation' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Transformation.php',
+        'Doctrine\\Inflector\\Rules\\Transformations' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Transformations.php',
+        'Doctrine\\Inflector\\Rules\\Turkish\\Inflectible' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Inflectible.php',
+        'Doctrine\\Inflector\\Rules\\Turkish\\InflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/InflectorFactory.php',
+        'Doctrine\\Inflector\\Rules\\Turkish\\Rules' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Rules.php',
+        'Doctrine\\Inflector\\Rules\\Turkish\\Uninflected' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Turkish/Uninflected.php',
+        'Doctrine\\Inflector\\Rules\\Word' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Rules/Word.php',
+        'Doctrine\\Inflector\\RulesetInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/RulesetInflector.php',
+        'Doctrine\\Inflector\\WordInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/WordInflector.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
         'Doctrine\\Instantiator\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',
         'Doctrine\\Instantiator\\Exception\\UnexpectedValueException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php',
@@ -4402,10 +4441,6 @@ class ComposerStaticInit3af25a7893ff0ebe942397c3013d7bf5
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
-        'UpdateHelper\\ComposerPlugin' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/ComposerPlugin.php',
-        'UpdateHelper\\NotUpdateInterfaceInstanceException' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/NotUpdateInterfaceInstanceException.php',
-        'UpdateHelper\\UpdateHelper' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/UpdateHelper.php',
-        'UpdateHelper\\UpdateHelperInterface' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/UpdateHelperInterface.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',

@@ -17,7 +17,7 @@ class ProductController extends Controller
     {
 
         $products = Product::all();
-        $dataPage = "";
+        $dataPage = "setupHome";
         
 
         return view('product.index', ['products' => $products, 'dataPage' => $dataPage]);

@@ -2,6 +2,7 @@
 
 @section('titulo','Gestión Principal')
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mb-4">
@@ -20,7 +21,34 @@
 
                             <div class="col">
                                 <label style="margin-right:10px;" for="usr">Codigo Producto:</label>
-                                <input type="text" class="form-control" name="id_prodfab" id="usr">
+                                <div class="input-group">
+                                    <input type="text" name="id_prodfab" class="form-control" id="scanner_input" placeholder="Haga clic en el botón para escanear" />
+                                    <span class="input-group-btn"> 
+                                        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#livestream_scanner">
+                                        <img class="size-bar" src="{{ asset('images/barcode.svg') }}" alt="">
+
+                                        </button> 
+                                    </span>
+                                </div><!-- /input-group -->
+                                <div class="modal" role="dialog" id="livestream_scanner">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title">Escáner de código de barras</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body" style="position: static">
+                                                <div id="interactive" class="viewport"></div>
+                                                <div class="error"></div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>

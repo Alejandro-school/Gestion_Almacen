@@ -10,5 +10,7 @@ elixir(function(mix) {
 elixir(function(mix) {
     mix.scripts([
         'general.js',
+        'QuaggaScanner.js',
+        'quagga.js',
     ],  'public/js/script.min.js');
 });

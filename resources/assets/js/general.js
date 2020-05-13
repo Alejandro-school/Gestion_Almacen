@@ -13,6 +13,7 @@ function initPage_onDomContentLoaded() {
 function route(page) {
     switch (page) {
         case "setupHome":
+            QuaggaScanner();
             break;
 
         case "setupProduct":
