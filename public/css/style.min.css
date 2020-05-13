@@ -28,6 +28,10 @@ h2 {
   color: red;
 }
 
+.alert-succes {
+  color: green;
+}
+
 .d-none {
   display: none;
 }

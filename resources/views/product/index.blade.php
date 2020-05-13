@@ -18,6 +18,9 @@
                 </br>
 
                 <table class="table table-hover table-light text-center">
+                @if (Session::has('success'))
+                <p class="alert-success text-center">{{Session::get('success')}}</p>
+                @endif
                     <thead class="bg-orange">
                         <tr>
                             <th scope="col">#</th>
@@ -36,7 +39,7 @@
                             <td>{{$prod->name}}</td>
                             <td>{{$prod->id_prodfab}}</td>
                             <td>{{$prod->internal_number}}</td>
-                            <td>{{$prod->image}}</td>
+                            <td><img src="{{ asset('/images').'/'.$prod->image}}" alt=""></td>
                             <td>
                        
                             <a href="" class="btn btn-warning" >Editar</a>

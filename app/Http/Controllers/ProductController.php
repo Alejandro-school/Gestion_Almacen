@@ -27,11 +27,10 @@ class ProductController extends Controller
     {
 
     
-        $providers = Provider::all();
         
         $dataPage = "setupProduct";
 
-        return view('product.create', ['providers' => $providers, 'dataPage' => $dataPage]);
+        return view('product.create', ['dataPage' => $dataPage]);
     }
 
     public function save(Request $request)
@@ -43,7 +42,6 @@ class ProductController extends Controller
             'id_prodfab' => 'required|string',
             'internal_number' => 'required|string',
             'imagen' => 'required|max:2048|mimes:jpeg,jpg,png',
-            'price' => 'required',
           ]);
 
 
@@ -76,14 +74,8 @@ class ProductController extends Controller
     
            Product::insert($data);
 
-           $id_product = Product::latest('id')->first();
 
-            
-
-          
-
-
-        return back();
+           return redirect()->action('ProductController@index')->with('success', 'Producto creado satisfactoriamente');
     }
     
     

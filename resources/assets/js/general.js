@@ -16,13 +16,13 @@ function route(page) {
             break;
 
         case "setupProduct":
-            addProvidersPrice();
+            
 
             break;
     }
 }
 
-function addProvidersPrice() {
+/*function addProvidersPrice() {
     var checks = document.querySelectorAll(".checkProv");
     var displayProv = document.querySelector(".displayProv");
 
@@ -47,6 +47,6 @@ function addProvidersPrice() {
         });
     }
 
-}
+}*/
 
 window.addEventListener("DOMContentLoaded", initPage_onDomContentLoaded);

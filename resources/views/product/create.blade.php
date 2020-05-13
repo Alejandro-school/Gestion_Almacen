@@ -49,21 +49,6 @@
                             <p class="alert-warning">{{$errors->first('imagen')}}</p>
                         </div>
 
-                        @foreach($providers as $prov)
-                        <div class="form-check">
-                            <input class="form-check-input checkProv" type="checkbox" value="{{$prov->id}}">
-                            <label class="form-check-label mr-4" for="defaultCheck1">
-                                {{$prov->name}}
-                            </label>
-
-                            <div class="displayProv">
-            
-                            </div>
-                            
-                            <br><br>
-                        </div>
-                        @endforeach
-
 
                         <input type="submit" class="btn bg-orange" value="Crear Producto">
 
