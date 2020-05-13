@@ -49,20 +49,20 @@
                             <p class="alert-warning">{{$errors->first('imagen')}}</p>
                         </div>
 
+                        @foreach($providers as $prov)
                         <div class="form-check">
-                            
-                             @foreach($providers as $prov)
-                            <input class="form-check-input" type="checkbox" value="{{$prov->id}}" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
+                            <input class="form-check-input checkProv" type="checkbox" value="{{$prov->id}}">
+                            <label class="form-check-label mr-4" for="defaultCheck1">
                                 {{$prov->name}}
                             </label>
-                            <div class="form-group">
-                            <label for="logo">{{'Precio'}}</label>
-                            <input class="form-control" type="text" name="price" value="">
-                            <p class="alert-warning">{{$errors->first('price')}}</p>
+
+                            <div class="displayProv">
+            
                             </div>
-                            @endforeach
+                            
+                            <br><br>
                         </div>
+                        @endforeach
 
 
                         <input type="submit" class="btn bg-orange" value="Crear Producto">
