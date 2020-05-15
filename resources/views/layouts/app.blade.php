@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-page="{{$dataPage}}">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -54,14 +54,30 @@
                         @endif
                         @else
 
+                        @can('Providers.index')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/Providers') }}">Gestionar Proveedores</span></a>
+                            <a class="nav-link" href="{{ route('Providers.index') }}">Gestionar Proveedores</span></a>
                         </li>
+                        @endcan
 
+                        @can('Users.index')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/Products') }}">Gestionar Productos</span></a>
+                            <a class="nav-link" href="{{ route('Users.index') }}">Gestionar Usuarios</span></a>
                         </li>
-                        
+                        @endcan
+
+                        @can('Roles.index')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('Roles.index') }}">Gestionar roles</span></a>
+                        </li>
+                        @endcan
+
+                        @can('product.index')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('product.index') }}">Gestionar Productos</span></a>
+                        </li>
+                        @endcan
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle text-orange" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

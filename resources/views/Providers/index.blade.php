@@ -10,9 +10,9 @@
                     Gestión Proveedores
                 </div>
                 <div class="card-body">
-                
-                <a href="{{ url ('/Providers/create') }}" class="btn btn-success" >Añadir Proveedor</a>
-                
+                @can ('Providers.create')
+                <a href="{{ route ('Providers.create') }}" class="btn btn-success" >Añadir Proveedor</a>
+                @endcan
                 </br>
                 </br>
 
@@ -35,12 +35,14 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">DNI</th>
                             <th scope="col">Logo</th>
-                            <th scope="col">Acciones</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Detalles</th>
+                            <th scope="col">Borrar</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach($providers as $provider) 
+                        @foreach($providers as $provider)
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$provider->name}}</td>
@@ -49,23 +51,30 @@
                                 <img class="size-img" src="{{ asset('/images').'/'.$provider->logo }}" alt="Logo empresa proveedor">
                             </td>
                             <td>
-
-                            <a href="{{ url ('/Providers/'.$provider->id).'/edit' }}" class="btn btn-warning" >Editar</a>
-
-                                <form method="post" action="{{ url ('/Providers/'.$provider->id) }}" style="display:inline">
-                                {{ csrf_field() }}
-                                {{method_field ('DELETE') }}
+                            @can ('Providers.edit')
+                            <a href="{{ route ('Providers.edit', $provider->id) }}" class="btn btn-warning" >Editar</a>
+                            @endcan
+                            </td>
+                            <td>
+                            @can ('Providers.show')
+                            <a href="{{ route ('Providers.show', $provider->id) }}" class="btn btn-info" >Detalles</a>
+                            @endcan
+                            </td>
+                            <td>
+                            @can ('Providers.destroy')
+                                {!! Form::open(['route' => ['Providers.destroy', $provider->id],
+                                'method' =>'DELETE']) !!}
 
                                 <button class="btn btn-danger" type="submit">Borrar</button>
-                                
-                                </form>
 
+                            {!! Form::close() !!}
+                            @endcan
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-
+                {{ $providers->render() }}
                 </div>
             </div>
         </div>

@@ -11,9 +11,9 @@
                     Gestión Productos
                 </div>
                 <div class="card-body">
-                
-                <a href="{{ url('/createProduct') }}" class="btn btn-success" >Añadir producto</a>
-                
+                @can ('product.create')
+                <a href="{{ route('product.create') }}" class="btn btn-success" >Añadir producto</a>
+                @endcan
                 </br>
                 </br>
 
@@ -38,7 +38,9 @@
                             <td>{{$prod->internal_number}}</td>
                             <td>{{$prod->image}}</td>
                             <td>
-                       
+                            @can('product.details')
+                            <a href="{{ route('product.details', $prod->id) }}" class="btn btn-warning" >Detalles</a>
+                            @endcan
                             <a href="" class="btn btn-warning" >Editar</a>
 
                                 <form method="post" action="" style="display:inline">

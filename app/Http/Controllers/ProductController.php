@@ -10,9 +10,6 @@ use Carbon\Carbon;
 class ProductController extends Controller
 {
 
-
-
-
     public function index() 
     {
 
@@ -77,10 +74,6 @@ class ProductController extends Controller
            Product::insert($data);
 
            $id_product = Product::latest('id')->first();
-
-            
-
-          
 
 
         return back();
