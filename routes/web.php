@@ -55,6 +55,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::post('search', 'HomeController@search');
+Route::post('saveLinkProvider', 'LinkProviderController@save');
 
 //Providers
 Route::resource('Providers', 'ProviderController');
@@ -106,7 +107,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('Products/{product}', 'ProductController@destroy')->name('product.destroy')
         ->middleware('can:product.destroy');
 
-    Route::get('modifyProduct/{product}', 'ProductController@modify')->name('product.modify')
+    Route::get('modifyProduct/{product}', 'ProductController@modify')->name('modify.product')
         ->middleware('can:product.modify');
 
     //Provider

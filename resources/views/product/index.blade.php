@@ -43,7 +43,7 @@
                             <td><img src="{{ asset('/images').'/'.$prod->image}}" alt=""></td>
                             <td>
 
-                            <a href="{{ route('product.modify',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a>
+                            <a href="{{ route('modify.product',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a>
 
                                 <form method="post" action="{{ action('ProductController@delete') }}" style="display:inline">
                                 {{ csrf_field() }}
