@@ -1,33 +1,57 @@
-'use strict';
 
 
 function initPage_onDomContentLoaded() {
+    var page = document.querySelector("[data-page]").getAttribute("data-page");
 
-    var page = document.querySelector("[data-page]").getAttribute('data-page');
-
-    if(page!=""){
+    if (page != "") {
         route(page);
-    }else{
+    } else {
         return;
     }
-    
-    
 }
 
 function route(page) {
-
-    switch(page) {
-
-        case 'setupHome':
-
+    switch (page) {
+        case "setupHome":
+            QuaggaScanner();
             break;
 
-        case 'setupProduct':
+        case "setupProduct":
+            break;
 
-        
+        case "setupLinkProvider":
+            searchProductByNumber();
+            QuaggaScanner();
+
             break;
     }
-
 }
 
-window.addEventListener('DOMContentLoaded', initPage_onDomContentLoaded);
+/*function addProvidersPrice() {
+    var checks = document.querySelectorAll(".checkProv");
+    var displayProv = document.querySelector(".displayProv");
+
+    for (var i = 0; i < checks.length; i++) {
+        
+        checks[i].addEventListener("click", function() {            
+
+                if (this.checked) {
+                    
+                    displayProv.innerHTML = `
+                    <div class="form-group">
+                    <label for="logo">Precio</label>
+                    <input class="form-control" type="text" name="price" value="">
+                    <p class="alert-warning"></p>
+                    </div>`;
+                } else {
+                    displayProv.innerHTML = "";
+                } 
+               
+              
+            
+        });
+    }
+
+}*/
+
+window.addEventListener("DOMContentLoaded", initPage_onDomContentLoaded);

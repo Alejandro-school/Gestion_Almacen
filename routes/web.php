@@ -59,11 +59,9 @@ Route::post('search', 'HomeController@search');
 //Providers
 Route::resource('Providers', 'ProviderController');
 
+
 //product
-Route::get('detailProduct/{id}', 'ProductController@modify')->name('modify.product');
-Route::get('Products', 'ProductController@index');
-Route::get('createProduct', 'ProductController@create');
-Route::post('saveProduct', 'ProductController@save');
+
 
 Route::middleware(['auth'])->group(function () {
 
@@ -90,25 +88,25 @@ Route::middleware(['auth'])->group(function () {
 
     //Product
 
-    Route::post('Products/store', 'ProductController@store')->name('product.store')
+    Route::post('saveProduct', 'ProductController@save')->name('product.store')
         ->middleware('can:product.create');
 
     Route::get('Products', 'ProductController@index')->name('product.index')
         ->middleware('can:product.index');
 
-    Route::get('Products/create', 'ProductController@create')->name('product.create')
+    Route::get('createProduct', 'ProductController@create')->name('product.create')
         ->middleware('can:product.create');
 
-    Route::put('Products/{role}', 'ProductController@update')->name('product.update')
-        ->middleware('can:product.edit');
+    Route::post('updateProduct', 'ProductController@update')->name('product.update')
+        ->middleware('can:product.modify');
 
-    Route::get('Products/{role}', 'ProductController@show')->name('product.show')
+    Route::get('Products/{product}', 'ProductController@show')->name('product.show')
         ->middleware('can:product.show');
 
-    Route::delete('Products/{role}', 'ProductController@destroy')->name('product.destroy')
+    Route::delete('Products/{product}', 'ProductController@destroy')->name('product.destroy')
         ->middleware('can:product.destroy');
 
-    Route::get('Products/{role}/edit', 'ProductController@edit')->name('product.modify')
+    Route::get('modifyProduct/{product}', 'ProductController@modify')->name('product.modify')
         ->middleware('can:product.modify');
 
     //Provider
@@ -150,5 +148,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('Users/{user}/edit', 'UserController@edit')->name('Users.edit')
         ->middleware('can:Users.edit');
-
 });
+Route::post('deleteProduct', 'ProductController@delete');
+
+//LinkProvider
+Route::get('linkProvider', 'LinkProviderController@index');
+Route::post('searchDinamic', 'linkProviderController@search');

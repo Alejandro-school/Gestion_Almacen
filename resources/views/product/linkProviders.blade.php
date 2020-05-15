@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
-@section('titulo','Gestión Principal')
+@section('titulo','Vincular Productos con Proveedores')
 @section('content')
+
+<h2 class="mb-3">Vincular Productos y Proveedores</h2>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mb-4">
@@ -10,18 +13,18 @@
                     Buscar
                 </div>
                 <div class="card-body">
-                    <form action="{{ action('HomeController@search') }}" method="POST">
+                    <form action="" method="POST" id="form-search">
                       {{ csrf_field() }}
                         <div class="form-row">
                             <div class="col">
                                 <label style="margin-right:10px;" for="usr">Codigo Interno:</label>
-                                <input type="text" name="internal_number" class="form-control" id="usr">
+                                <input type="text" name="internal_number" class="form-control internal_number">
                             </div>
 
                             <div class="col">
                                 <label style="margin-right:10px;" for="usr">Codigo Producto:</label>
                                 <div class="input-group">
-                                    <input type="text" name="id_prodfab" class="form-control" id="scanner_input" placeholder="Haga clic en el botón para escanear" />
+                                    <input type="text" name="id_prodfab" class="form-control id_prodfab" id="scanner_input" placeholder="Haga clic en el botón para escanear" />
                                     <span class="input-group-btn"> 
                                         <button class="btn btn-default" type="button" data-toggle="modal" data-target="#livestream_scanner">
                                         <img class="size-bar" src="{{ asset('images/barcode.svg') }}" alt="">
@@ -52,16 +55,27 @@
 
                         </div>
                         <button type="submit" class="btn btn-secondary mt-3">Buscar</button>
+                        <p id="countProducts" class="text-center font-weight-bold"></p>
                     </form>
 
                 </div>
             </div>
+
+            <form action="" class="mt-4">
+
+            <label for="">Resultado de productos</label>
+            <select class="custom-select my-1 mr-sm-2 products" id="inlineFormCustomSelectPref">
+            </select>
+
+            <label for="">Elegir proveedor</label>
+            <select class="custom-select my-1 mr-sm-2 providers mb-3 inline-block" id="inlineFormCustomSelectPref">
+            </select>
+
+         
+            </form>
+
+            <button type="submit" class="btn bg-orange mt-3">Vincular Proveedor</button>
         </div>
+        
 
-        @include('product.products')
-
-    </div>
-</div>
-
-</div>
 @endsection

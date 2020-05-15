@@ -10,5 +10,8 @@ elixir(function(mix) {
 elixir(function(mix) {
     mix.scripts([
         'general.js',
+        'QuaggaScanner.js',
+        'quagga.js',
+        'searchProductByNumber.js',
     ],  'public/js/script.min.js');
 });

@@ -49,21 +49,6 @@
                             <p class="alert-warning">{{$errors->first('imagen')}}</p>
                         </div>
 
-                        <div class="form-check">
-                            
-                             @foreach($providers as $prov)
-                            <input class="form-check-input" type="checkbox" value="{{$prov->id}}" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                                {{$prov->name}}
-                            </label>
-                            <div class="form-group">
-                            <label for="logo">{{'Precio'}}</label>
-                            <input class="form-control" type="text" name="price" value="">
-                            <p class="alert-warning">{{$errors->first('price')}}</p>
-                            </div>
-                            @endforeach
-                        </div>
-
 
                         <input type="submit" class="btn bg-orange" value="Crear Producto">
 

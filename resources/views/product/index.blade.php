@@ -11,13 +11,17 @@
                     Gestión Productos
                 </div>
                 <div class="card-body">
-                @can ('product.create')
-                <a href="{{ route('product.create') }}" class="btn btn-success" >Añadir producto</a>
-                @endcan
+                
+                <a href="{{ url('/createProduct') }}" class="btn btn-success" >Añadir producto</a>
+                <a href="{{ url('/linkProvider') }}" class="btn btn-info font-weight-bold" >Vincular Proveedor</a>
+                
                 </br>
                 </br>
 
                 <table class="table table-hover table-light text-center">
+                @if (Session::has('success'))
+                <p class="alert-success text-center">{{Session::get('success')}}</p>
+                @endif
                     <thead class="bg-orange">
                         <tr>
                             <th scope="col">#</th>
@@ -36,17 +40,15 @@
                             <td>{{$prod->name}}</td>
                             <td>{{$prod->id_prodfab}}</td>
                             <td>{{$prod->internal_number}}</td>
-                            <td>{{$prod->image}}</td>
+                            <td><img src="{{ asset('/images').'/'.$prod->image}}" alt=""></td>
                             <td>
-                            @can('product.details')
-                            <a href="{{ route('product.details', $prod->id) }}" class="btn btn-warning" >Detalles</a>
-                            @endcan
-                            <a href="" class="btn btn-warning" >Editar</a>
 
-                                <form method="post" action="" style="display:inline">
+                            <a href="{{ route('product.modify',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a>
+
+                                <form method="post" action="{{ action('ProductController@delete') }}" style="display:inline">
                                 {{ csrf_field() }}
                                
-
+                                <input type="hidden" name="id_product" value="{{$prod->id}}">
                                 <button class="btn btn-danger" type="submit">Borrar</button>
                                 
                                 </form>
