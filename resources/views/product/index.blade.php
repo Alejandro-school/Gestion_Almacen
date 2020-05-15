@@ -11,8 +11,9 @@
                     Gestión Productos
                 </div>
                 <div class="card-body">
-                
+                @can('product.create')
                 <a href="{{ url('/createProduct') }}" class="btn btn-success" >Añadir producto</a>
+                @endcan
                 <a href="{{ url('/linkProvider') }}" class="btn btn-info font-weight-bold" >Vincular Proveedor</a>
                 
                 </br>
@@ -43,7 +44,7 @@
                             <td><img src="{{ asset('/images').'/'.$prod->image}}" alt=""></td>
                             <td>
 
-                            <a href="{{ route('product.modify',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a>
+                            <a href="{{ route('modify.product',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a>
 
                                 <form method="post" action="{{ action('ProductController@delete') }}" style="display:inline">
                                 {{ csrf_field() }}

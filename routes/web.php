@@ -106,7 +106,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('Products/{product}', 'ProductController@destroy')->name('product.destroy')
         ->middleware('can:product.destroy');
 
-    Route::get('modifyProduct/{product}', 'ProductController@modify')->name('product.modify')
+    Route::get('modifyProduct/{product}', 'ProductController@modify')->name('modify.product')
         ->middleware('can:product.modify');
 
     //Provider
