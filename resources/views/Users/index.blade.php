@@ -24,9 +24,9 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Detalles</th>
-                            <th scope="col">Eliminar</th>
+                            <th scope="col"></th>
+                            <th scope="col">Acciones</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
 

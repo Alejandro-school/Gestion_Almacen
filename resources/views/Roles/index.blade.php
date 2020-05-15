@@ -33,9 +33,9 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Rol</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Detalles</th>
-                            <th scope="col">Borrar</th>
+                            <th scope="col"></th>
+                            <th scope="col">Acciones</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
 
