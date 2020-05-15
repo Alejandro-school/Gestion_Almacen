@@ -13,7 +13,7 @@
                 <div class="card-body">
                 
                 <a href="{{ url('/createProduct') }}" class="btn btn-success" >Añadir producto</a>
-                <a href="{{ url('/createProduct') }}" class="btn btn-info font-weight-bold" >Vincular Proveedor</a>
+                <a href="{{ url('/linkProvider') }}" class="btn btn-info font-weight-bold" >Vincular Proveedor</a>
                 
                 </br>
                 </br>

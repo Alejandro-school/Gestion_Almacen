@@ -17,7 +17,7 @@ class ProductController extends Controller
     {
 
         $products = Product::all();
-        $dataPage = "setupHome";
+        $dataPage = "";
         
 
         return view('product.index', ['products' => $products, 'dataPage' => $dataPage]);
@@ -134,6 +134,17 @@ class ProductController extends Controller
 
               return redirect()->action('ProductController@index')->with('success', 'Producto Actualizado Satisfactoriamente');
 
+    }
+
+    public function linkProv() {
+
+        $products = Product::all();
+        $providers = Provider::all();
+
+    
+        
+
+        return view('product.linkProviders', ['products' => $products, 'providers' => $providers]);
     }
 
     public function delete(Request $request) {

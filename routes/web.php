@@ -65,10 +65,17 @@ Route::post('search', 'HomeController@search');
 //Providers
 Route::resource('Providers', 'ProviderController');
 
+
 //product
-Route::get('detailProduct/{id}', 'ProductController@modify')->name('modify.product');
+Route::get('modifyProduct/{id}', 'ProductController@modify')->name('modify.product');
 Route::get('Products', 'ProductController@index');
 Route::get('createProduct', 'ProductController@create');
 Route::post('updateProduct', 'ProductController@update');
+Route::post('saveProduct', 'ProductController@save');
 Route::post('deleteProduct', 'ProductController@delete');
+
+//LinkProvider
+Route::get('linkProvider', 'LinkProviderController@index');
+Route::post('searchDinamic', 'linkProviderController@search');
+
 

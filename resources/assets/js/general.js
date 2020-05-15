@@ -1,4 +1,4 @@
-"use strict";
+
 
 function initPage_onDomContentLoaded() {
     var page = document.querySelector("[data-page]").getAttribute("data-page");
@@ -17,7 +17,11 @@ function route(page) {
             break;
 
         case "setupProduct":
-            
+            break;
+
+        case "setupLinkProvider":
+            searchProductByNumber();
+            QuaggaScanner();
 
             break;
     }
