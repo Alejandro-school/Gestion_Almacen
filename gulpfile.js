@@ -13,5 +13,6 @@ elixir(function(mix) {
         'QuaggaScanner.js',
         'quagga.js',
         'searchProductByNumber.js',
+        'insertProvidersInProducts.js',
     ],  'public/js/script.min.js');
 });

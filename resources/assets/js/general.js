@@ -17,6 +17,7 @@ function route(page) {
             break;
 
         case "setupProduct":
+            insertProvidersInProducts();
             break;
 
         case "setupLinkProvider":

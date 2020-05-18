@@ -57,6 +57,9 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::post('search', 'HomeController@search');
 Route::post('saveLinkProvider', 'LinkProviderController@save');
 
+//ajax
+Route::post('saveProvider', 'LinkProviderController@saveProvider');
+
 //Providers
 Route::resource('Providers', 'ProviderController');
 

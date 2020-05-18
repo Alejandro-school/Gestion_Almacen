@@ -67,8 +67,8 @@
 
             <form method="POST" action="{{ action('LinkProviderController@save') }}" class="mt-4">
                 {{ csrf_field() }}
-                @if (Session::has('success'))
-                <p class="alert-success text-center">{{Session::get('success')}}</p>
+                @if (Session::has('success_prov'))
+                <p class="alert-success text-center">{{Session::get('success_prov')}}</p>
                 @endif
                 <label for="">Resultado de productos</label>
                 <select class="custom-select my-1 mr-sm-2 products" name="id_product">

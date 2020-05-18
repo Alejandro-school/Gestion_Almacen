@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Provider;
 use DB;
+use Session;
 use Carbon\Carbon;
 class ProductController extends Controller
 {
@@ -25,7 +26,7 @@ class ProductController extends Controller
 
     
         
-        $dataPage = "setupProduct";
+        $dataPage = "";
 
         return view('product.create', ['dataPage' => $dataPage]);
     }
@@ -33,6 +34,12 @@ class ProductController extends Controller
     public function save(Request $request)
     {
 
+        $providers = Provider::all();
+        
+        //Creamos un dataPage para cuando le de a crear producto podamos hacer el formulario de añadir proveedores con ajax
+        $dataPage = 'setupProduct';
+
+        
         $validate = $this->validate($request, [
             'id_user' => 'required|integer',
             'name' => 'required|string',
@@ -70,8 +77,14 @@ class ProductController extends Controller
     
            Product::insert($data);
 
+           $lastId = Product::latest('id')->first();
 
-           return redirect()->action('ProductController@index')->with('success', 'Producto creado satisfactoriamente');
+           $products = Product::orderBy('created_at','desc')->paginate(10);
+
+           Session::flash('success', 'Producto creado, elige un proveedor');
+
+           
+           return view('product.create', ['providers' => $providers, 'product'=>$lastId, 'products' => $products, 'dataPage' => $dataPage]);
     }
     
     
@@ -128,7 +141,7 @@ class ProductController extends Controller
               $test = Product::where('id','=',$id_product)->update($data);
 
              
-
+              
               return redirect()->action('ProductController@index')->with('success', 'Producto Actualizado Satisfactoriamente');
 
     }
@@ -143,6 +156,8 @@ class ProductController extends Controller
 
         return view('product.linkProviders', ['products' => $products, 'providers' => $providers]);
     }
+
+    
 
     public function delete(Request $request) {
 

@@ -37,8 +37,29 @@ class LinkProviderController extends Controller
 
     }
 
+    public function saveProvider(Request $request) {
+
+        if($request->ajax()){
+            $id_product = $request->input("id_product");
+            $id_provider = $request->input("id_provider");
+            $price = $request->input("price");
+
+            DB::table('product_provider')->insert(
+                ['id_product' => $id_product, 'id_provider' => $id_provider, 'price' => $price]);
+
+            $provider = Provider::where('id', $id_provider)->first();
+
+            $nameProvider = $provider->name;
+
+            return response()->json(['success' => 'Proveedor '.$nameProvider.' Añadido']);
+
+        }
+
+    }
+
     public function save(Request $request) {
-       
+      
+        
         $id_product = $request->input("id_product");
         $id_provider = $request->input("id_provider");
         $price = $request->input("price");
@@ -46,7 +67,7 @@ class LinkProviderController extends Controller
         DB::table('product_provider')->insert(
             ['id_product' => $id_product, 'id_provider' => $id_provider, 'price' => $price]);
 
-        Session::flash('success', 'Proveedor Vinculado Satisfactoriamente');
+        Session::flash('success_prov', 'Proveedor Vinculado Satisfactoriamente');
 
         return back();
     
