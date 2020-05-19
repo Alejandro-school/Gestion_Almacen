@@ -48,7 +48,7 @@
                     @for($i=0; $i< sizeof($products->providers);$i++)
 
                         <tr>
-                            {{$products->providers[$i]['pivot']}}
+                            
                             <input type="hidden" value="{{$products->id}}">
                             <input type="hidden" value="{{$products->providers[$i]->id}}">
                             <td>{{$products->providers[$i]->nif}}</td>
