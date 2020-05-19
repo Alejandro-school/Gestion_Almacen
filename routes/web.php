@@ -53,6 +53,10 @@ echo $prod->providers[0]->id;
 
 Auth::routes();
 
+Route::get('modifyPriceProviders/{id_prod}/{id_prov}', 'ProductController@modifyPriceProviders')->name('modify.priceproviders');
+Route::post('updatePriceProviders', 'ProductController@updatePriceProviders');
+Route::get('deletePriceProviders/{id_prod}/{id_prov}', 'ProductController@deletePriceProviders')->name('delete.priceproviders');
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::post('search', 'HomeController@search');
 Route::post('saveLinkProvider', 'LinkProviderController@save');
@@ -62,6 +66,8 @@ Route::post('saveProvider', 'LinkProviderController@saveProvider');
 
 //Providers
 Route::resource('Providers', 'ProviderController');
+
+
 
 
 //product

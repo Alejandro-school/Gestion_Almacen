@@ -51,12 +51,17 @@
                             </div>
 
                         </div>
-                        <button type="submit" class="btn btn-secondary mt-3">Buscar</button>
+                        <button type="submit" class="btn btn-secondary mt-3 mb-3">Buscar</button>
+                        @if (Session::has('success'))
+                                <p class="alert-success text-center">{{Session::get('success')}}</p>
+                        @endif
                     </form>
 
                 </div>
             </div>
         </div>
+
+       
 
         @include('product.products')
 

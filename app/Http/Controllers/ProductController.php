@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Provider;
 use DB;
+
 use Session;
 use Carbon\Carbon;
 class ProductController extends Controller
@@ -146,13 +147,55 @@ class ProductController extends Controller
 
     }
 
+
+    public function modifyPriceProviders($id_product, $id_provider) {
+        
+        
+        $ids = array('id_product' => $id_product, 'id_provider' => $id_provider);
+
+        $provider = Provider::where('id', $id_provider)->first();
+        $product = Product::where('id', $id_product)->first();
+        $providers = Provider::all();
+
+        return view('Product.modifyPrice', ['product' => $product, 'provider' => $provider , 'providers' => $providers, 'id_prod_prov' => $ids]);
+    }
+
+    public function updatePriceProviders(Request $request) {
+        
+        
+        try {
+        $id_product = $request->input('id_product');
+        $id_providerActual = $request->input('id_prov_actual');
+        $id_providerNew= $request->input('id_new_provider');
+        $price = $request->input('price');
+
+
+        DB::table('product_provider')
+              ->where('id_product', $id_product)->where('id_provider', $id_providerActual)
+              ->update(['id_provider' => $id_providerNew, 'price' => $price]);
+        
+              Session::flash('success', 'Proveedor Actualizado Satisfactoriamente');
+              return back();
+         }catch(\Illuminate\Database\QueryException $e) {
+            Session::flash('failed', 'Ese proveedor ya esta vinculado a ese producto');
+            return back();
+        }
+
+    }
+
+    public function deletePriceProviders($id_product, $id_provider) {
+        
+        
+        DB::table('product_provider')->where('id_product', $id_product)->where('id_provider', $id_provider)->delete();
+        return redirect()->action('HomeController@index')->with('success', 'Proveedor borrado del producto');
+
+
+    }
+
     public function linkProv() {
 
         $products = Product::all();
         $providers = Provider::all();
-
-    
-        
 
         return view('product.linkProviders', ['products' => $products, 'providers' => $providers]);
     }

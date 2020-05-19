@@ -17,7 +17,7 @@ class CreateProvidersTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name',50);
-            $table->char('nif',9)->unique();
+            $table->string('nif',150)->unique();
             $table->string('logo',255);
             
         });

@@ -129,8 +129,8 @@
                     <thead class="bg-primary">
                         <tr>
                             <th scope="col">Nombre</th>
+                            <th scope="col">Codigo Interno</th>
                             <th scope="col">Codigo Producto</th>
-                            <th scope="col">Codigo interno</th>
                             <th scope="col">Fecha de Alta</th>
 
                         </tr>

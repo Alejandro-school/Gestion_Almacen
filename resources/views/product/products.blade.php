@@ -38,6 +38,9 @@
                         <th scope="col">Numero Proveedor</th>
                         <th scope="col">Proveedores</th>
                         <th scope="col">Precio</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Borrar</th>
+                        
                     </tr>
                 </thead >
                 <tbody>
@@ -45,9 +48,14 @@
                     @for($i=0; $i< sizeof($products->providers);$i++)
 
                         <tr>
+                            {{$products->providers[$i]['pivot']}}
+                            <input type="hidden" value="{{$products->id}}">
+                            <input type="hidden" value="{{$products->providers[$i]->id}}">
                             <td>{{$products->providers[$i]->nif}}</td>
                             <td>{{$products->providers[$i]->name}}</td>
                             <td>{{$products->providers[$i]['pivot']->price}}€</td>
+                            <td><a href="{{ route('modify.priceproviders', array($products->id, $products->providers[$i]->id))}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a></td>
+                            <td><a href="{{ route('delete.priceproviders', array($products->id, $products->providers[$i]->id))}}" class="btn btn-danger"href="">Borrar</a></td>
                         </tr>
                     @endfor
                 </tbody>
