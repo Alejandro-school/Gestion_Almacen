@@ -53,8 +53,9 @@ function searchProducts() {
 function printProducts(respuesta) {
 
 
- console.log(respuesta);
+
  var parentTable = document.querySelector(".parent-table");
+ document.querySelector(".pagination").innerHTML = "";
  
  
  var resultSearch = "";
