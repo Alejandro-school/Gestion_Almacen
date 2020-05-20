@@ -37,6 +37,7 @@
                     <div class="form-group">
                     <label for="imagen">Imagen Producto</label>
                     <input type="file" class="form-control"  name="imagen">
+                    <input type="hidden" name="current_image" value="{{$product->image}}">
                     <p class="alert-warning">{{$errors->first('imagen')}}</p>
                     </div>
                   
