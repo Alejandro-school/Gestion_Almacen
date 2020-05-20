@@ -1,6 +1,11 @@
 <div class="col-md-8">
     <div class="card">
+        @if(isset($countProduct) && $countProduct==0)
+            <p>No se ha encontrado el producto</p>
+        @endif
+
         @if(isset($products))
+
         <div class="card-body">
             <table class="table table-hover text-center">
                 <thead class="bg-orange">
@@ -63,5 +68,7 @@
         </div>
     </div>
     @endif
+        
+    
 
 </div>

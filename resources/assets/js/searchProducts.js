@@ -94,7 +94,7 @@ function printProducts(respuesta) {
                     <form method="post" action="http://gestion-almacen.com.devel/deleteProduct" style="display:inline">
                     <input type="hidden" name="_token" value="2NpEQKO50dwlMVRFkTLDp0f8avQevsQWdse47Mnq"> 
                    
-                    <input type="hidden" name="id_product" value="{{$prod->id}}">
+                    <input type="hidden" name="id_product" value="${respuesta.product[i].id}">
                     <button class="btn btn-danger" type="submit">Borrar</button>
                     
                     </form>

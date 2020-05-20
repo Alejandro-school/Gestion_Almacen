@@ -18,6 +18,7 @@ class ProductController extends Controller
         $products = Product::all();
         $dataPage = "searchProducts";
         
+        
 
         return view('product.index', ['products' => $products, 'dataPage' => $dataPage]);
     }
