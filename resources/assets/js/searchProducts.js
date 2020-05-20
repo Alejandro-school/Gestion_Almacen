@@ -36,7 +36,7 @@ function searchProducts() {
             .then(function(respuesta) {
                    
                     if(respuesta){
-                        printProducts(respuesta);
+                        printSearchProduct(respuesta);
                         
                     }
                    
@@ -50,12 +50,12 @@ function searchProducts() {
 
 }
 
-function printProducts(respuesta) {
+function printSearchProduct(respuesta) {
 
 
 
  var parentTable = document.querySelector(".parent-table");
- document.querySelector(".pagination").innerHTML = "";
+ var pagination = document.querySelector(".pagination");
  
  
  var resultSearch = "";
@@ -64,6 +64,9 @@ function printProducts(respuesta) {
      parentTable.removeChild(parentTable.firstChild);
  }
 
+ pagination.innerHTML="";
+
+ 
  document.querySelector("#countProducts").innerHTML=`<p>Productos encontrados: ${respuesta.countProducts}</p>`;
 
  resultSearch = ` <thead class="bg-orange">
