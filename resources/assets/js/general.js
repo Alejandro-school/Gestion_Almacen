@@ -16,6 +16,11 @@ function route(page) {
             QuaggaScanner();
             break;
 
+        case "searchProducts":
+            searchProducts();
+            QuaggaScanner();
+            break;
+
         case "setupProduct":
             insertProvidersInProducts();
             break;

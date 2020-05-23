@@ -44,6 +44,13 @@ class HomeController extends Controller
             $product = Product::where('id_prodfab', $productNumber)->first();
         }
 
-        return view('home', ['products'=>$product, 'dataPage' => $dataPage]);
+        if($product!=null){
+        $countProduct = $product->count();
+        }else{
+            $countProduct = 0;
+        }
+
+
+        return view('home', ['products'=>$product, 'dataPage' => $dataPage, 'countProduct' => $countProduct]);
     }
 }

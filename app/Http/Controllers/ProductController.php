@@ -15,8 +15,9 @@ class ProductController extends Controller
     public function index() 
     {
 
-        $products = Product::all();
-        $dataPage = "";
+        $products = Product::paginate(5);
+        $dataPage = "searchProducts";
+        
         
 
         return view('product.index', ['products' => $products, 'dataPage' => $dataPage]);
@@ -56,6 +57,7 @@ class ProductController extends Controller
         $internal_number = $request->input('internal_number');
         $picture = $request->file('imagen');
         $id_provider = $request->input('provider_id');
+        
 
         if ($picture) {
             
@@ -107,7 +109,7 @@ class ProductController extends Controller
             'name' => 'required|string',
             'id_prodfab' => 'required|string',
             'internal_number' => 'required|string',
-            'imagen' => 'required|max:2048|mimes:jpeg,jpg,png',
+            
           ]);
 
           $id_product = $request->input('id_product');
@@ -116,6 +118,7 @@ class ProductController extends Controller
           $id_prodfab = $request->input('id_prodfab');
           $internal_number = $request->input('internal_number');
           $picture = $request->file('imagen');
+          $current_image = $request->input('current_image');
 
           
   
@@ -124,6 +127,8 @@ class ProductController extends Controller
               $namePicture=$picture->getClientOriginalName();
               $picture->move(public_path().'/images',$namePicture);
               $imagen = $namePicture;
+          }else{
+              $imagen=$current_image;
           }
   
           $data=array(

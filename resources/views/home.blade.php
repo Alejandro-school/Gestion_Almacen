@@ -52,6 +52,9 @@
 
                         </div>
                         <button type="submit" class="btn btn-secondary mt-3 mb-3">Buscar</button>
+
+                        
+
                         @if (Session::has('success'))
                                 <p class="alert-success text-center">{{Session::get('success')}}</p>
                         @endif
@@ -61,6 +64,7 @@
             </div>
         </div>
 
+       
        
 
         @include('product.products')
