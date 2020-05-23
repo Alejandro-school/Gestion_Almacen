@@ -10,9 +10,11 @@
                     Gestión Proveedores
                 </div>
                 <div class="card-body">
+
                 @can ('Providers.create')
                 <a href="{{ route ('Providers.create') }}" class="btn btn-success" >Añadir Proveedor</a>
                 @endcan
+                
                 </br>
                 </br>
 
@@ -35,9 +37,8 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">DNI</th>
                             <th scope="col">Logo</th>
-                            <th scope="col"></th>
-                            <th scope="col">Acciones</th>
-                            <th scope="col"></th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Borrar</th>
 
                         </tr>
                     </thead>
@@ -52,16 +53,14 @@
                                 <img class="size-img" src="{{ asset('/images').'/'.$provider->logo }}" alt="Logo empresa proveedor">
                             </td>
                             <td>
+
                             @can ('Providers.edit')
-                            <a href="{{ route ('Providers.edit', $provider->id) }}" class="btn btn-warning" >Editar</a>
+                            <a href="{{ route ('Providers.edit', $provider->id) }}"><img src="{{ asset('images/pencil.svg') }}" alt="editar"></a>
                             @endcan
+
                             </td>
                             <td>
-                            @can ('Providers.show')
-                            <a href="{{ route ('Providers.show', $provider->id) }}" class="btn btn-info" >Detalles</a>
-                            @endcan
-                            </td>
-                            <td>
+
                             @can ('Providers.destroy')
                                 {!! Form::open(['route' => ['Providers.destroy', $provider->id],
                                 'method' =>'DELETE']) !!}

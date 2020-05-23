@@ -64,7 +64,7 @@
 
                     </div>
 
-
+                    
                     @if(isset($providers))
 
                     <div class="row border border-1 p-2">

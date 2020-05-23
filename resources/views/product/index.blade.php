@@ -13,9 +13,8 @@
                 <div class="card-body">
                 @can('product.create')
                 <a href="{{ url('/createProduct') }}" class="btn btn-success" >Añadir producto</a>
-                @endcan
                 <a href="{{ url('/linkProvider') }}" class="btn btn-info font-weight-bold" >Vincular Proveedor</a>
-                
+                @endcan
                 </br>
                 </br>
 
@@ -44,7 +43,7 @@
                             <td><img src="{{ asset('/images').'/'.$prod->image}}" alt=""></td>
                             <td>
                             @can('product.modify')
-                            <a href="{{ route('modify.product',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt=""></a>
+                            <a href="{{ route('modify.product',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt="editar"></a>
                             @endcan
                            
                             @can('product.destroy')

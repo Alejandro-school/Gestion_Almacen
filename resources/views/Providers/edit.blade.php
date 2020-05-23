@@ -29,14 +29,13 @@
                             <input  class="form-control" type="text" name="nif" value="{{$provider->nif}}">
                         </div>
 
-
+                        
                         <div class="form-group">
                             <label for="logo">{{'Logo'}}</label>
 
                         </br>
                             <img class="size-img" src="{{ asset('/images').'/'.$provider->logo }}" alt="Logo empresa proveedor">
                         </br>
-
                             <input class="form-control" type="file" name="logo" value="">
                         </div>
 

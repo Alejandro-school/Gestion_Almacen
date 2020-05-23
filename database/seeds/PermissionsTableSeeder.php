@@ -164,6 +164,13 @@ class PermissionsTableSeeder extends Seeder
             'description' => 'Eliminar productos del sistema',
 
         ]);
+        Permission::create([
+
+            'name' => 'Vincular Proveedores con sus productos',
+            'slug' => 'product.linkProviders',
+            'description' => 'Vincular Proveedores a los productos',
+
+        ]);
 
     }
 }
