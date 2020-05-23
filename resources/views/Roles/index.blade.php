@@ -33,9 +33,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Rol</th>
-                            <th scope="col"></th>
-                            <th scope="col">Acciones</th>
-                            <th scope="col"></th>
+                            <th scope="col" colspan="3">Acciones</th>
                         </tr>
                     </thead>
 
@@ -46,7 +44,7 @@
                             <td>{{$role->name}}</td>
                             <td>
                             @can ('Roles.edit')
-                            <a href="{{ route ('Roles.edit', $role->id) }}" class="btn btn-warning" >Editar</a>
+                            <a href="{{ route ('Roles.edit', $role->id) }}"><img src="{{ asset('images/pencil.svg') }}" alt="editar"></a>
                             @endcan
                             </td>
                             <td>

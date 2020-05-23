@@ -10,7 +10,7 @@
 </div>
 <div class="form-group">
     {{ Form::label('description','Descripción')}}
-    {{ Form::text('name',null, ['class' => 'form-control']) }}
+    {{ Form::text('description',null, ['class' => 'form-control']) }}
 
 </div>
 <hr>

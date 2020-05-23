@@ -37,9 +37,10 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">DNI</th>
                             <th scope="col">Logo</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Borrar</th>
+                            <th scope="col" COLSPAN="2">Acciones</th>
 
+
+                            
                         </tr>
                     </thead>
 

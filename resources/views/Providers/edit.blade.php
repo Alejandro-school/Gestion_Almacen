@@ -7,36 +7,40 @@
         <div class="col-md-8 mb-4">
             <div class="card">
                 <div class="card-header">
-                   Edit
+                    Edit
                 </div>
                 <div class="card-body">
 
                     <form action="{{url('/Providers/' . $provider->id) }}" method="post" id="success-contact-form-2" enctype="multipart/form-data">
 
-                    {{ csrf_field() }}
+                        {{ csrf_field() }}
 
-                    {{ method_field('PATCH') }}
+                        {{ method_field('PATCH') }}
 
                         <div class="form-group">
                             <label for="name">{{'Nombre'}}</label>
-                            <input  class="form-control" type="text" name="name" value="{{$provider->name}}">
+                            <input class="form-control" type="text" name="name" value="{{$provider->name}}">
                         </div>
 
 
                         <div class="form-group">
 
                             <label for="nif">{{'Nif'}}</label>
-                            <input  class="form-control" type="text" name="nif" value="{{$provider->nif}}">
+                            <input class="form-control" type="text" name="nif" value="{{$provider->nif}}">
                         </div>
 
-                        
+
                         <div class="form-group">
                             <label for="logo">{{'Logo'}}</label>
-
-                        </br>
+                            </br>
                             <img class="size-img" src="{{ asset('/images').'/'.$provider->logo }}" alt="Logo empresa proveedor">
-                        </br>
-                            <input class="form-control" type="file" name="logo" value="">
+                            </br>
+
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="imagen">
+                                <input type="hidden" name="current_image" value="{{$provider->logo}}">
+                                <p class="alert-warning">{{$errors->first('imagen')}}</p>
+                            </div>
                         </div>
 
 

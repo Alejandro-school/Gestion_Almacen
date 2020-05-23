@@ -10,6 +10,7 @@
                     Buscar
                 </div>
                 <div class="card-body">
+                    @can('product.index')
                     <form action="{{ action('HomeController@search') }}" method="POST">
                       {{ csrf_field() }}
                         <div class="form-row">
@@ -59,7 +60,7 @@
                                 <p class="alert-success text-center">{{Session::get('success')}}</p>
                         @endif
                     </form>
-
+                    @endcan
                 </div>
             </div>
         </div>

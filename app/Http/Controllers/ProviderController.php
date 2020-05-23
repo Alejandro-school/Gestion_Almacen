@@ -113,16 +113,19 @@ class ProviderController extends Controller
         
        $name=$request->input("name");
        $nif=$request->input("nif");
-       $logo=$request->input("logo");
+       $picture=$request->input("logo");
+       $current_image = $request->input('current_image');
 
-       if ($picture= $request->file('logo')) {
+       if ($picture) {
 
         $namePicture = $picture->getClientOriginalName();
         $picture->move(public_path().'/images',$namePicture);
-
         $logo= $namePicture;
+       }else{
+            $logo=$current_image;
+        }
 
-       }
+       
 
       $data=array(
         

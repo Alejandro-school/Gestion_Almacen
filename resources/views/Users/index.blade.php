@@ -24,9 +24,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col"></th>
-                            <th scope="col">Acciones</th>
-                            <th scope="col"></th>
+                            <th scope="col" colspan="3">Acciones</th>
                         </tr>
                     </thead>
 
@@ -37,7 +35,7 @@
                             <td>{{$user->name}}</td>
                             <td>
                             @can ('Users.edit')
-                            <a href="{{ route ('Users.edit', $user->id) }}" class="btn btn-warning" >Editar</a>
+                            <a href="{{ route ('Users.edit', $user->id) }}"><img src="{{ asset('images/pencil.svg') }}" alt="editar"></a>
                             @endcan
                             </td>
                             <td>
