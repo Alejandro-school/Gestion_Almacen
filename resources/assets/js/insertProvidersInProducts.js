@@ -34,7 +34,7 @@ function insertProvidersInProducts() {
                 
                 })
                 .then(function(respuesta) {
-                       
+                       console.log(respuesta);
                       if(respuesta) {
                           document.querySelector(".success-create").innerHTML+=`<p class="alert-success">${respuesta.success}</p>`
                       }

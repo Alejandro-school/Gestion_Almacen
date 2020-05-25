@@ -26,7 +26,7 @@ class LinkProviderController extends Controller
 
         if($request->ajax()){
             $dato = $request->input("internal_number");
-
+            $price = $request->input("price");
             $searchProducts = Product::where('internal_number', 'LIKE', "%$dato%")->get();
             $countProducts = $searchProducts->count();
             $providers = Provider::all();
@@ -51,7 +51,7 @@ class LinkProviderController extends Controller
 
             $nameProvider = $provider->name;
 
-            return response()->json(['success' => 'Proveedor '.$nameProvider.' Añadido']);
+            return response()->json(['success' => 'Proveedor '.$nameProvider.' Añadido. '.'Precio: '.$price.'€']);
 
         }
 
