@@ -10,6 +10,8 @@ function initPage_onDomContentLoaded() {
     }
 }
 
+window.addEventListener("DOMContentLoaded", initPage_onDomContentLoaded);
+
 function route(page) {
     switch (page) {
         case "setupHome":
@@ -60,4 +62,4 @@ function route(page) {
 
 }*/
 
-window.addEventListener("DOMContentLoaded", initPage_onDomContentLoaded);
+

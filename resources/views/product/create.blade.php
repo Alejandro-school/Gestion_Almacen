@@ -29,12 +29,14 @@
                                     <label for="nombre">Nombre</label>
                                     <!--"form-control" añadir esta clase para que el input abarque el 100% de la columna-->
                                     <input type="text" class="form-control" placeholder="Nombre" name="name">
+                                    <p class="alert-warning">{{$errors->first('name')}}</p>
                                 </div>
                                 <div class="col-12 col-md-3">
                                     <label for="nombre">Codigo Interno</label>
                                     <!--"form-control" añadir esta clase para que el input abarque el 100% de la columna-->
                                     <input type="text" class="form-control" placeholder="Ponga aqui su numero interno"
                                         name="internal_number">
+                                        <p class="alert-warning">{{$errors->first('internal_number')}}</p>
                                 </div>
 
                                 <div class="col-12 col-md-3">
@@ -42,6 +44,7 @@
                                     <!--"form-control" añadir esta clase para que el input abarque el 100% de la columna-->
                                     <input type="text" class="form-control"
                                         placeholder="Ponga aqui el numero del producto" name="id_prodfab">
+                                        <p class="alert-warning">{{$errors->first('id_prodfab')}}</p>
                                 </div>
 
                                 <div class="col-12 col-md-3">

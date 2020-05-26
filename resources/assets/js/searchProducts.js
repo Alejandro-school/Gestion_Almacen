@@ -35,7 +35,9 @@ function searchProducts() {
             })
             .then(function(respuesta) {
                    
+
                     if(respuesta){
+                        console.log(respuesta.product);
                         printSearchProduct(respuesta);
                         
                     }

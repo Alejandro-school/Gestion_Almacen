@@ -181,6 +181,7 @@ class ProductController extends Controller
         
               Session::flash('success', 'Proveedor Actualizado Satisfactoriamente');
               return back();
+              
          }catch(\Illuminate\Database\QueryException $e) {
             Session::flash('failed', 'Ese proveedor ya esta vinculado a ese producto');
             return back();
