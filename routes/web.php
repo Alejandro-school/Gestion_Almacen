@@ -69,10 +69,6 @@ Route::resource('Providers', 'ProviderController');
 
 
 
-
-//product
-
-
 Route::middleware(['auth'])->group(function () {
 
     Route::post('Roles/store', 'RoleController@store')->name('Roles.store')

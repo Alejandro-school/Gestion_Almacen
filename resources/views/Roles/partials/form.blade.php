@@ -1,16 +1,16 @@
 <div class="form-group">
     {{ Form::label('name','Nombre')}}
-    {{ Form::text('name',null, ['class' => 'form-control']) }}
+    {{ Form::text('name',null, ['class' => 'form-control','required']) }}
 
 </div>
 <div class="form-group">
     {{ Form::label('slug','Url Amigable')}}
-    {{ Form::text('slug',null, ['class' => 'form-control']) }}
+    {{ Form::text('slug',null, ['class' => 'form-control','required']) }}
 
 </div>
 <div class="form-group">
     {{ Form::label('description','Descripción')}}
-    {{ Form::text('description',null, ['class' => 'form-control']) }}
+    {{ Form::text('description',null, ['class' => 'form-control','required']) }}
 
 </div>
 <hr>

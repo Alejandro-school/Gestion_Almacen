@@ -18,6 +18,7 @@
                         <div class="form-group">
                             <label for="name">{{'Nombre'}}</label>
                             <input  class="form-control" type="text" name="name" value="">
+                            <p class="alert-warning">{{$errors->first('name')}}</p>
                         </div>
 
 
@@ -25,12 +26,14 @@
 
                             <label for="nif">{{'Nif'}}</label>
                             <input  class="form-control" type="text" name="nif" value="">
+                            <p class="alert-warning">{{$errors->first('nif')}}</p>
                         </div>
                         
 
                         <div class="form-group">
                             <label for="logo">{{'Logo'}}</label>
                             <input class="form-control" type="file" name="logo" value="">
+                            <p class="alert-warning">{{$errors->first('logo')}}</p>
                         </div>
 
 

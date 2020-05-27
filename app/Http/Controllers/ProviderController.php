@@ -43,6 +43,12 @@ class ProviderController extends Controller
     {
 
 
+        $validate = $this->validate($request, [
+            'name' => 'required|integer',
+            'nif' => 'required|string',
+            'logo' => 'required|string',
+          ]);
+
        $name=request()->input('name');
        $nif=request()->input('nif');
        $logo=request()->input('logo');
