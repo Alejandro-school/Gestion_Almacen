@@ -44,9 +44,9 @@ class ProviderController extends Controller
 
 
         $validate = $this->validate($request, [
-            'name' => 'required|integer',
+            'name' => 'required|String',
             'nif' => 'required|string',
-            'logo' => 'required|string',
+            'logo' => 'required|max:2048|mimes:jpeg,jpg,png',
           ]);
 
        $name=request()->input('name');

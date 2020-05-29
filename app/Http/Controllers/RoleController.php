@@ -42,7 +42,7 @@ class RoleController extends Controller
 
         $role->permissions()->sync($request->get('permissions'));
 
-        return redirect('Roles')->with('create','Usuario eliminado!');
+        return redirect('Roles')->with('success','Rol creado!');
 
     }
     /**
