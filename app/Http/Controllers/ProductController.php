@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Product;
 use App\Provider;
@@ -15,8 +14,10 @@ class ProductController extends Controller
     public function index() 
     {
 
-        $products = Product::paginate(5);
+        $products = Product::paginate(3);
         $dataPage = "searchProducts";
+
+     
         
         
 
@@ -145,7 +146,7 @@ class ProductController extends Controller
             
 
               $test = Product::where('id','=',$id_product)->update($data);
-
+              
              
               
               return redirect()->action('ProductController@index')->with('success', 'Producto Actualizado Satisfactoriamente');

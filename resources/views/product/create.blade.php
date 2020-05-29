@@ -86,7 +86,7 @@
                                         <input type="hidden" value="{{$product->id}}" name="id_product" id="id_product">
                                         <!--"form-control" añadir esta clase para que el input abarque el 100% de la columna-->
                                         <input type="text" class="form-control" placeholder="Nombre Producto"
-                                             value="{{$product->name}}">
+                                             value="{{$product->name}}" disabled>
                                     </div>
                                     <div class="col-12 col-md-4">
                                         <label for="nombre">Nombre Proveedor</label>

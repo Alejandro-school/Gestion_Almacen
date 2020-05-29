@@ -60,9 +60,12 @@ class LinkProviderController extends Controller
     public function save(Request $request) {
       
         
+        
         $id_product = $request->input("id_product");
         $id_provider = $request->input("id_provider");
         $price = $request->input("price");
+
+        try {
 
         DB::table('product_provider')->insert(
             ['id_product' => $id_product, 'id_provider' => $id_provider, 'price' => $price]);
@@ -70,6 +73,14 @@ class LinkProviderController extends Controller
         Session::flash('success_prov', 'Proveedor Vinculado Satisfactoriamente');
 
         return back();
+        
+        }catch(\Illuminate\Database\QueryException $e) {
+            
+            Session::flash('failed', 'Ese proveedor ya esta vinculado a ese producto');
+            return back();
+
+        }
+        
     
     }
 }

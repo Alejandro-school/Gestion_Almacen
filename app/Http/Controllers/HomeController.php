@@ -50,6 +50,13 @@ class HomeController extends Controller
             $countProduct = 0;
         }
 
+        /*for($i=0; $i < sizeof($product->providers); $i++) {
+
+            echo $product->providers[$i];
+            die();
+        }*/
+        
+
 
         return view('home', ['products'=>$product, 'dataPage' => $dataPage, 'countProduct' => $countProduct]);
     }
