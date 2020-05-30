@@ -65,9 +65,17 @@
                         
                     </form>
 
-                    <div id="countProducts" class="mt-3 mb-4 text-center font-weight-bold"></div>
+                <div id="countProducts" class="mt-3 mb-4 text-center font-weight-bold"></div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <table class="table table-hover table-light text-center parent-table">
+    <div class="row justify-content-center">
+        <div class="col-md-8 ">
+
+        <table class="table table-hover table-light text-center parent-table">
                 
                 @if (Session::has('success'))
                 <p class="alert-success text-center">{{Session::get('success')}}</p>
@@ -78,7 +86,7 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">Codigo Producto</th>
                             <th scope="col">Codigo interno</th>
-                            <th scope="col">Imagen</th>
+                            <th scope="col" class="d-none d-md-block border-0">Imagen</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -90,7 +98,7 @@
                             <td>{{$prod->name}}</td>
                             <td>{{$prod->id_prodfab}}</td>
                             <td>{{$prod->internal_number}}</td>
-                            <td><img src="{{ asset('/images').'/'.$prod->image}}" alt=""></td>
+                            <td class="d-none d-md-block"><img src="{{ asset('/images').'/'.$prod->image}}" alt=""></td>
                             <td>
                             @can('product.modify')
                             <a href="{{ route('modify.product',$prod->id)}}"><img class="" src="{{ asset('images/pencil.svg') }}" alt="editar"></a>
@@ -115,10 +123,11 @@
                    
                 </table>
                 {{ $products->render() }}
-                </div>
-            </div>
+        
         </div>
     </div>
 </div>
+
+
 
 @endsection

@@ -30,13 +30,21 @@
                     <p class="alert-success text-center">{{Session::get('delete')}}</p>
                 @endif
 
-                <table class="table table-hover table-light text-center">
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <table class="table table-hover table-light text-center">
                     <thead class="bg-orange">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">DNI</th>
-                            <th scope="col">Logo</th>
+                            <th scope="col" class="d-none d-md-block">Logo</th>
                             <th scope="col" COLSPAN="2">Acciones</th>
 
 
@@ -50,7 +58,7 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$provider->name}}</td>
                             <td>{{$provider->nif}}</td>
-                            <td>
+                            <td class="d-none d-md-block">
                                 <img class="size-img" src="{{ asset('/images').'/'.$provider->logo }}" alt="Logo empresa proveedor">
                             </td>
                             <td>
@@ -76,11 +84,12 @@
                     </tbody>
                 </table>
                 {{ $providers->render() }}
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
+
+
 
 </div>
 @endsection
